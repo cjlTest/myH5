@@ -2,39 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>百年孤独</title>
+    <title>Title</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        html,body{
-            width: 100%;
-            height: 100%;
-        }
-        div{
-            width: 100%;
-            height: 100%;
-            text-align: center;
-        }
-        h1{
-            color: white;
-            padding-top: 300px;
-        }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body{
+        background: skyblue;
+    }
+    .box{
+    width: 600px;
+    height: 400px;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+    }
+    .box img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all ease 0.6s;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    }
+    .result04{
+        /*overflow: visible;*/
+        background: yellow;
+    }
+    .fragment{/*显示的文本片段*/
+        text-align: center;
+        width: 600px;
+        height: 400px;
+        padding-top: 40px;/*让标题下来*/
+        border: 1px solid #333;/*加个边框，让文档片段内容更具可识别性*/
+        position: absolute;
+        z-index: 5;
+    }
+    .fragment>h2{
+        padding: 10px 0;/*让标题自动增加高度*/
+    }
+    .fragment>p{
+        margin: 10px 0;/*文字片段上下外边距拉开距离*/
+        font-size: 21px;
+    }
+    .fragment>a{/*转换为块级元素，设置宽高和居中*/
+        width: 200px;
+        height: 60px;
+        color: red;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 60px;
+        position: relative;
+        top: 30px;
+        overflow: hidden;
+        border: 1px solid red;
+    }
+    .fragment>a>span{/*转换为块级元素，设置宽和高*/
+        display: block;
+        width: 100px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        transition: all ease 0.5s;
+    }
+    .fragment>a>span:first-child{/*文字span*/
+        width: 200px;
+        top: 0;
+        left: 0;
+        font-size: 22px;
+        z-index: 5;/*要压在其他两个span上面*/
+    }
+    .fragment>a:hover>span:first-child{
+        color: #fff;/*鼠标移入a标签文本颜色发生变化*/
+    }
+    /*鼠标未移入按钮之前的样式*/
+    .fragment>a>span:nth-child(2){
+        top: 0;
+        left: -100px;/*宽度的负值则出现在按钮边界以外*/
+        background: red;
+    }
+    /*当鼠标移入按钮时的样式*/
+    .fragment>a:hover>span:nth-child(2){
+        left: 0;/*一个span靠齐左边界*/
+    }
+    /*鼠标未移入之前的样式*/
+    .fragment>a>span:last-child{
+        top: 0;
+        right: -100px;/*宽度的负值则出现在按钮边界以外*/
+        background: red;
+    }
+    /*当鼠标移入按钮时的样式*/
+    .fragment>a:hover>span:last-child{
+        right: 0;
+    }
+    /*当鼠标移入result04这个按钮时控制后面的图片*/
+    .result04:hover>img{
+        top: -400px;
+        left: -600px;/*向左上角走*/
+        /*绝对定位方向值
+        top正值向下，负值向上
+        bottom正值向上，负值向下
+        bottom正值向上，负值向下
+        left正值向右，负值向左
+        right正值向左，负值向右
+        */
+    }
     </style>
 </head>
 <body>
-    <div style="background: url(./img/1.jpg) no-repeat center center;background-size: cover;background-attachment: fixed">
-        <h1>过去都是假的，回忆是一条没有归途的路，以往的一切春天无法复原，即使是最狂热最坚贞的爱情，
-            归根结底不过是一场转瞬即逝的现实。唯有孤独才是永恒</h1>
+<div class="box result04">
+    <img src="btn.jpg" alt="">
+    <div class="fragment">
+        <h2>做一只特立独行的猪</h2>
+        <p>念念不忘自己是个人，家住某某县城某某乡镇，周围有三姑六婆，亲朋好友
+            应该循规蹈矩的过一生，倘有余力，就该发大财，当大官，让别人说你好
+        </p>
+        <a href="#">
+            <span>大宝贝</span>
+            <span></span>
+            <span></span>
+        </a>
     </div>
-    <div style="background: url(./img/2.jpg) no-repeat center center;background-size: cover;background-attachment: fixed">
-        <h1>过去都是假的，回忆是一条没有归途的路，以往的一切春天无法复原，即使是最狂热最坚贞的爱情，
-            归根结底不过是一场转瞬即逝的现实。唯有孤独才是永恒</h1>
-    </div>
-    <div style="background: url(./img/3.jpg) no-repeat center center;background-size: cover;background-attachment: fixed">
-        <h1>过去都是假的，回忆是一条没有归途的路，以往的一切春天无法复原，即使是最狂热最坚贞的爱情，
-            归根结底不过是一场转瞬即逝的现实。唯有孤独才是永恒</h1>
-    </div>
+</div>
 </body>
 </html>
