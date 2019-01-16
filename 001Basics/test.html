@@ -37,19 +37,19 @@
         text-align: center;
         width: 600px;
         height: 400px;
-        padding-top: 40px;/*让标题下来*/
-        border: 1px solid #333;/*加个边框，让文档片段内容更具可识别性*/
+        padding-top: 40px;
+        border: 1px solid #333;
         position: absolute;
         z-index: 5;
     }
     .fragment>h2{
-        padding: 10px 0;/*让标题自动增加高度*/
+        padding: 10px 0;
     }
     .fragment>p{
-        margin: 10px 0;/*文字片段上下外边距拉开距离*/
+        margin: 10px 0;
         font-size: 21px;
     }
-    .fragment>a{/*转换为块级元素，设置宽高和居中*/
+    .fragment>a{
         width: 200px;
         height: 60px;
         color: red;
@@ -62,7 +62,7 @@
         overflow: hidden;
         border: 1px solid red;
     }
-    .fragment>a>span{/*转换为块级元素，设置宽和高*/
+    .fragment>a>span{
         display: block;
         width: 100px;
         height: 60px;
@@ -70,51 +70,46 @@
         top: 0;
         transition: all ease 0.5s;
     }
-    .fragment>a>span:first-child{/*文字span*/
+    .fragment>a>span:first-child{
         width: 200px;
         top: 0;
         left: 0;
         font-size: 22px;
-        z-index: 5;/*要压在其他两个span上面*/
+        z-index: 5;
     }
     .fragment>a:hover>span:first-child{
-        color: #fff;/*鼠标移入a标签文本颜色发生变化*/
+        color: #fff;
     }
     /*鼠标未移入按钮之前的样式*/
     .fragment>a>span:nth-child(2){
         top: 0;
-        left: -100px;/*宽度的负值则出现在按钮边界以外*/
+        left: -100px;
         background: red;
     }
-    /*当鼠标移入按钮时的样式*/
+    
     .fragment>a:hover>span:nth-child(2){
-        left: 0;/*一个span靠齐左边界*/
+        left: 0;
     }
-    /*鼠标未移入之前的样式*/
+    
     .fragment>a>span:last-child{
         top: 0;
-        right: -100px;/*宽度的负值则出现在按钮边界以外*/
+        right: -100px;
         background: red;
     }
-    /*当鼠标移入按钮时的样式*/
+    
     .fragment>a:hover>span:last-child{
         right: 0;
     }
-    /*当鼠标移入result04这个按钮时控制后面的图片*/
+    
     .result04:hover>img{
         top: -400px;
         left: -600px;/*向左上角走*/
-        /*绝对定位方向值
-        top正值向下，负值向上
-        bottom正值向上，负值向下
-        bottom正值向上，负值向下
-        left正值向右，负值向左
-        right正值向左，负值向右
-        */
+        
     }
     </style>
 </head>
 <body>
+    
 <div class="box result04">
     <img src="img/btn.jpg" alt="">
     <div class="fragment">
@@ -122,12 +117,15 @@
         <p>念念不忘自己是个人，家住某某县城某某乡镇，周围有三姑六婆，亲朋好友
             应该循规蹈矩的过一生，倘有余力，就该发大财，当大官，让别人说你好
         </p>
-        <a href="#">
+       <a href="#">
             <span>大宝贝</span>
             <span></span>
             <span></span>
         </a>
     </div>
 </div>
+<script>
+    console.log("喜提彩蛋，凭此彩蛋可获棒棒糖一枚、酸奶一瓶、辣条一包、可乐一瓶、方便面一桶、瓜子一包、土豆一个、玉米一个、包子一个、馒头一个、榨菜一包等等等等，只要你要，只要我有")    
+</script>
 </body>
 </html>
